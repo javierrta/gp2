@@ -1,11 +1,11 @@
-# Gestor-de-Proyectos\r\n
+# Gestor-de-Proyectos
 
-Este es un proyecto a realizar en común.\r\n
+Este es un proyecto a realizar en común.
 
-El reparto de trabajos es\r\n
-  Jose Luis     - Proyectos\r\n
-  Alvaro        - Front + usuario\r\n
-  Alberto       - Categorías + situaciones\r\n
-  Adrián        - Acciones\r\n
-  Jorge - Angel - Tareas\r\n
-  Jose Ignacio  - ¿CSS?\r\n
+El reparto de trabajos es
+  Jose Luis     - Proyectos
+  Alvaro        - Front + usuario
+  Alberto       - Categorías + situaciones
+  Adrián        - Acciones
+  Jorge - Angel - Tareas
+  Jose Ignacio  - ¿CSS?
