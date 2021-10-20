@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-10-2021 a las 11:50:32
+-- Tiempo de generación: 20-10-2021 a las 13:46:34
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 7.3.27
 
@@ -48,7 +48,12 @@ CREATE TABLE `acciones` (
 INSERT INTO `acciones` (`acc_id`, `acc_nombre`, `acc_fr_inicio`, `acc_fr_fin`, `acc_ft_inicio`, `acc_ft_fin`, `acc_usu_id`, `acc_duracion`, `acc_sit_id`, `acc_proy_id`, `acc_obs`) VALUES
 (1, 'Compras de equipos', '2021-10-15', '2021-10-20', '2021-10-10', '2021-10-15', 3, 3, 1, 1, ''),
 (2, 'Contratación de personal', '2021-10-10', '2021-10-31', '2021-10-10', '2021-10-15', 4, 5, 2, 1, 'Seleccionando personal'),
-(3, 'Instalación', '0000-00-00', '0000-00-00', '2021-10-15', '2021-10-20', 5, 5, 1, 1, '');
+(3, 'Instalación', '0000-00-00', '0000-00-00', '2021-10-15', '2021-10-20', 5, 5, 1, 1, ''),
+(4, 'Diseño de la BBDD', '2021-10-19', '2021-10-19', '2021-10-19', '2021-10-19', 15, 1, 4, 2, ''),
+(5, 'Acuerdo de criterios', '2021-10-20', '2021-10-20', '2021-10-20', '2021-10-20', 13, 1, 4, 2, ''),
+(6, 'Desarrollo de programas', '2021-10-20', '0000-00-00', '2021-10-20', '2021-10-24', 9, 5, 2, 2, ''),
+(7, 'Pruebas', '2021-10-24', '2021-10-25', '2021-10-24', '2021-10-25', 15, 2, 1, 2, ''),
+(8, 'Implantación', '2021-10-25', '2021-10-25', '2021-10-25', '2021-10-25', 15, 1, 1, 2, '');
 
 -- --------------------------------------------------------
 
@@ -95,7 +100,8 @@ CREATE TABLE `proyectos` (
 --
 
 INSERT INTO `proyectos` (`proy_id`, `proy_nombre`, `proy_fr_inicio`, `proy_fr_fin`, `proy_ft_inicio`, `proy_ft_fin`, `proy_usu_id`, `proy_duracion`, `proy_sit_id`, `proy_obs`) VALUES
-(1, 'Montaje de red', '0000-00-00', '0000-00-00', '2021-10-15', '2021-10-31', 1, 15, 1, 'No se han comprado los equipos');
+(1, 'Montaje de red', '0000-00-00', '0000-00-00', '2021-10-15', '2021-10-31', 1, 15, 1, 'No se han comprado los equipos'),
+(2, 'Gestor de proyectos', '2021-10-19', '0000-00-00', '2021-10-19', '2021-10-24', 15, 5, 2, '');
 
 -- --------------------------------------------------------
 
@@ -152,7 +158,18 @@ INSERT INTO `tareas` (`tar_id`, `tar_nombre`, `tar_fr_inicio`, `tar_fr_fin`, `ta
 (6, 'Contratación', '2021-10-17', '2021-10-23', '2021-10-17', '2021-10-23', 5, 5, 2, 2, ''),
 (7, 'Formación', '2021-10-24', '2021-10-30', '2021-10-24', '2021-10-30', 6, 5, 1, 2, ''),
 (8, 'Instalación de red', '0000-00-00', '0000-00-00', '2021-10-24', '2021-10-30', 6, 5, 1, 3, ''),
-(9, 'Instalación de SSOO', '0000-00-00', '0000-00-00', '2021-10-24', '2021-10-30', 6, 3, 1, 3, '');
+(9, 'Instalación de SSOO', '0000-00-00', '0000-00-00', '2021-10-24', '2021-10-30', 6, 3, 1, 3, ''),
+(10, 'DIseño BBDD', '2021-10-19', '2021-10-19', '2021-10-19', '2021-10-19', 15, 1, 4, 4, ''),
+(11, 'Acuerdo de criterios', '2021-10-20', '2021-10-20', '2021-10-20', '2021-10-20', 15, 1, 4, 5, ''),
+(12, 'Proyectos', '2021-10-20', '0000-00-00', '2021-10-20', '2021-10-24', 9, 5, 2, 6, ''),
+(13, 'Front + Usuarios', '2021-10-20', '2021-10-24', '2021-10-20', '2021-10-24', 10, 5, 2, 6, ''),
+(14, 'Categorías', '2021-10-20', '2021-10-24', '2021-10-20', '2021-10-24', 11, 5, 2, 6, ''),
+(15, 'Situaciones', '2021-10-20', '2021-10-24', '2021-10-20', '2021-10-24', 14, 5, 2, 6, ''),
+(16, 'Acciones', '2021-10-20', '2021-10-24', '2021-10-20', '2021-10-24', 12, 5, 2, 6, ''),
+(17, 'Tareas', '2021-10-20', '2021-10-24', '2021-10-20', '2021-10-24', 13, 5, 2, 6, ''),
+(18, 'Controladores', '2021-10-20', '2021-10-20', '2021-10-20', '2021-10-20', 13, 1, 4, 6, ''),
+(19, 'Pruebas', '2021-10-24', '2021-10-24', '2021-10-24', '2021-10-24', 15, 1, 1, 7, ''),
+(20, 'Implantación', '2021-10-25', '2021-10-25', '2021-10-25', '2021-10-25', 15, 1, 1, 8, '');
 
 -- --------------------------------------------------------
 
@@ -179,7 +196,16 @@ INSERT INTO `usuarios` (`usu_id`, `usu_nombre`, `usu_password`, `usu_cat_id`) VA
 (5, 'Responsable de tarea 1', '81dc9bdb52d04dc20036dbd8313ed055', 3),
 (6, 'Responsable de tarea 2', '81dc9bdb52d04dc20036dbd8313ed055', 3),
 (7, 'Usuario 1', '81dc9bdb52d04dc20036dbd8313ed055', 4),
-(8, 'Usuario 2', '81dc9bdb52d04dc20036dbd8313ed055', 4);
+(8, 'Usuario 2', '81dc9bdb52d04dc20036dbd8313ed055', 4),
+(9, 'José Luis', '1234', 1),
+(10, 'Alvaro', '1234', 1),
+(11, 'Alberto', '1234', 1),
+(12, 'Adrián', '1234', 1),
+(13, 'Jorge', '1234', 1),
+(14, 'José Ignacio', '1234', 1),
+(15, 'Javier', '1234', 1),
+(16, 'Oswaldo', '1234', 1),
+(17, 'Angel', '1234', 1);
 
 --
 -- Índices para tablas volcadas
@@ -238,7 +264,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `acciones`
 --
 ALTER TABLE `acciones`
-  MODIFY `acc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `acc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `categorias`
@@ -250,7 +276,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `proyectos`
 --
 ALTER TABLE `proyectos`
-  MODIFY `proy_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `proy_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `situaciones`
@@ -262,13 +288,13 @@ ALTER TABLE `situaciones`
 -- AUTO_INCREMENT de la tabla `tareas`
 --
 ALTER TABLE `tareas`
-  MODIFY `tar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `tar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Restricciones para tablas volcadas
