@@ -2,8 +2,6 @@
 
 require_once("configuracion.php");
 
-$x=0;
-
 class conexion
 {
 
