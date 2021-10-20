@@ -1,7 +1,7 @@
 <?php
 
-//require_once("config.php");
-//require_once('localConfig.php');
+//require_once("configuracion.php");
+
 
 class Conexion
 {
@@ -11,8 +11,8 @@ class Conexion
 
         try {
             // Crear una conexión instanciando un objeto PDO y seteándolo
-            //$PDO = new PDO(SERVERBD, USERBD, PASSBD);
-            $PDO = new PDO('mysql:host=localhost; dbname=bd_proyectos', 'root', "");
+            $PDO = new PDO(SERVERBD, USERBD, PASSBD);
+            //$PDO = new PDO('mysql:host=localhost; dbname=bd_proyectos', 'root', "");
             $PDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $PDO->exec("SET CHARACTER SET utf8");
 
