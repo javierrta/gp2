@@ -5,5 +5,5 @@ $sql = "SELECT * FROM situaciones";
 echo $sql."<br>";
 $datos = controlador::select($sql);
 echo '<pre>';
-var_export($datos);
+var_export(json_decode($datos));
 echo '</pre>';
