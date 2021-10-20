@@ -4,9 +4,9 @@ Este es un proyecto a realizar en común.
 
 El reparto de trabajos es
   Jose Luis     - Proyectos
-  Alvaro        - Front + usuario
-  Alberto       - Categorías + situaciones
+  Alvaro        - Front + usuarios
+  Alberto       - Categorías
   Adrián        - Acciones
   Jorge - Angel - Tareas
-  Jose Ignacio  - ¿CSS?
+  Jose Ignacio  - Situaciones
 
