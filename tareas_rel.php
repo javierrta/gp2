@@ -1,12 +1,20 @@
 <?php
 require_once("controladores/controlador.php");
 
-//$usuId = $_REQUEST['usu'];
-//$accionId = $_REQUEST['accionId'];
-$sql = "SELECT * FROM tareas where tar_usu_id = 5 AND tar_acc_id = 1";
+//session_start();
 
-$response = controlador::select($sql);
-$datos = json_decode($response);
+if (!isset($_SESSION['id'])) {
+//$usuId = $_SESSION['id'];
+    $usuId = 5;
+//$accionId = $_REQUEST['accionId'];
+//echo $usuId;
+    //$sql = "SELECT * FROM tareas where tar_usu_id = $usuId AND tar_acc_id = 1";
+    $sql = "SELECT tar_id, tar_nombre, tar_fr_inicio, tar_fr_fin, tar_ft_inicio, tar_ft_fin, tar_usu_id, tar_duracion, tar_sit_id, tar_acc_id, tar_obs FROM tareas where tar_usu_id = 5 AND tar_acc_id = 1";
+    $response = controlador::select($sql);
+    $datos = json_decode($response);
+
+    $modificar = null;
+}
 
 ?>
 
@@ -20,7 +28,7 @@ $datos = json_decode($response);
 </head>
 <body>
 <header>
-    <h1>Relación de tareas del proyecto <? echo 'id de acción'//$accionId ?></h1>
+    <h1>Relación de tareas del proyecto <?php echo 'id de acción'//$accionId ?></h1>
 </header>
 <main>
     <table style="border: black 1px solid; ">
@@ -62,6 +70,42 @@ $datos = json_decode($response);
             observaciones
         </td>
         </th>
+        <?php if ($modificar != null) : ?>
+            <form>
+                <input type="hidden" name="tar_id" value="">
+                <label for="tar_nombre">
+                    <input type="text" name="tar_nombre" id="">
+                </label>
+                <label for="tar_fr_inicio">
+                    <input type="text" name="tar_fr_inicio" id="">
+                </label>
+                <label for="tar_fr_fin">
+                    <input type="text" name="tar_fr_fin" id="">
+                </label>
+                <label for="tar_ft_inicio">
+                    <input type="text" name="tar_ft_inicio" id="">
+                </label>
+                <label for="tar_ft_fin">
+                    <input type="text" name="tar_ft_fin" id="">
+                </label>
+                <label for="tar_usu_id">
+                    <input type="text" name="tar_usu_id" id="">
+                </label>
+                <label for="tar_duracion">
+                    <input type="text" name="tar_duracion" id="">
+                </label>
+                <label for="tar_sit_id">
+                    <input type="text" name="tar_sit_id" id="">
+                </label>
+                <label for="tar_acc_id">
+                    <input type="text" name="tar_acc_id" id="">
+                </label>
+                <label for="tar_obs">
+                    <input type="text" name="tar_obs" id="">
+                </label>
+            </form>
+        <?php else: ?>
+
         <?php foreach ($datos as $registro) : ?>
             <tr style="border: blue 1px solid; ">
                 <td style="border: greenyellow 1px solid; ">
@@ -100,9 +144,18 @@ $datos = json_decode($response);
                 <td>
                     <?php echo($registro->tar_obs) ?>
                 </td>
+                <?php if ($usuId == $usuId) : ?>
+                    <td>
+                        <button value="<?php echo($registro->tar_obs) ?> ">Modificar</button>
+                    </td>
+                    <td>
+                        <button value="<?php echo($registro->tar_obs) ?>">Borrar</button>
+                    </td>
+                <?php endif; ?>
             </tr>
         <?php endforeach; ?>
     </table>
+    <?php endif; ?>
 </main>
 
 </body>
