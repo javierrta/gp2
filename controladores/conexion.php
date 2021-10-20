@@ -1,0 +1,26 @@
+<?php
+
+//require_once("config.php");
+//require_once('localConfig.php');
+
+class Conexion
+{
+
+    public static function conectar()
+    {
+
+        try {
+            // Crear una conexión instanciando un objeto PDO y seteándolo
+            //$PDO = new PDO(SERVERBD, USERBD, PASSBD);
+            $PDO = new PDO('mysql:host=localhost; dbname=bd_proyectos', 'root', "");
+            $PDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $PDO->exec("SET CHARACTER SET utf8");
+
+            return $PDO;
+        } catch (Exception $e) {
+            die('Error: ' . $e->getMessage());
+        } finally {
+            $PDO = null;
+        }
+    }
+}
