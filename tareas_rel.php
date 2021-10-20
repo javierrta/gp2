@@ -20,7 +20,7 @@ $datos = json_decode($response);
 </head>
 <body>
 <header>
-    <h1>Relación de tareas del proyecto <? echo $accionId ?></h1>
+    <h1>Relación de tareas del proyecto <? echo 'id de acción'//$accionId ?></h1>
 </header>
 <main>
     <table style="border: black 1px solid; ">
