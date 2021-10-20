@@ -82,7 +82,6 @@ class controlador {
 
         $stmnt->execute();
 
-        $stmnt->execute();
         $affectedRows = $stmnt->rowCount();
 
         return $affectedRows;
